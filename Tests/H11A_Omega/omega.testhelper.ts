@@ -12,7 +12,7 @@ export async function getDataWeatherStation(
 
 ) {
   try {
-    const res = await axios.get(`${API_URL}?type=${type}&dateStart=${dateStart}&dateEnd=${dateEnd}&location=${location}&state=${state}`,
+    const res = await axios.get(`${API_URL}data?type=${type}&dateStart=${dateStart}&dateEnd=${dateEnd}&location=${location}&state=${state}`,
       {
         timeout: 10000,
       }
@@ -33,13 +33,14 @@ export async function getDataCoords(
 
 ) {
   try {
-    const res = await axios.get(`${API_URL}?type=${type}&dateStart=${dateStart}&dateEnd=${dateEnd}&&lat=${lat}&lon=${long}.`,
+    const res = await axios.get(`${API_URL}/data?type=${type}&dateStart=${dateStart}&dateEnd=${dateEnd}&&lat=${lat}&lon=${long}.`,
       {
         timeout: 10000,
       }
     )
     return res;
   } catch (error) {
+    console.log(error)
     throw error;
   }
 }
