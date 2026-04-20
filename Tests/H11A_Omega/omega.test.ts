@@ -5,7 +5,7 @@ const dateStart = '2026-01-02'
 const dateEnd = '2026-01-05'
 
 // test for getData
-describe('getData', () => {
+describe('GET /data', () => {
   test('successful getData, coords, temperature', async () => {
     const res = await getDataCoords(
       '-33',
